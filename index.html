@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Redirect</title>
 </head>
 <body>
@@ -10,18 +10,15 @@
     const isAndroid = /Android/i.test(navigator.userAgent);
 
     if (isAndroid) {
-        // Attempt to launch the Roblox app.
+        // Open Roblox in a browser tab.
+        window.open("https://www.roblox.com/", "_blank");
+
+        // Attempt to launch the installed Roblox app.
         window.location.href =
             "intent://home#Intent;" +
             "scheme=roblox;" +
             "package=com.roblox.client;" +
             "end;";
-
-        // Open the Roblox website in a separate tab.
-        setTimeout(() => {
-            window.open("https://www.roblox.com/", "_blank");
-        }, 1000);
-
     } else {
         window.open("https://www.roblox.com/", "_blank");
     }
