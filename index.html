@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting</title>
+    <title>Redirect</title>
 </head>
 <body>
 <script>
     const isAndroid = /Android/i.test(navigator.userAgent);
 
     if (isAndroid) {
-        // Open Roblox homepage in a browser tab.
+        // Open Roblox in a browser tab.
         window.open("https://www.roblox.com/", "_blank");
 
-        // Try to launch the Roblox app.
-        window.location.href = "roblox://";
+        // Try to launch the Roblox Android app.
+        window.location.href =
+            "intent://www.roblox.com/home#Intent;" +
+            "scheme=https;" +
+            "package=com.roblox.client;" +
+            "end;";
     } else {
-        // Open Roblox homepage in a new tab on PC.
         window.open("https://www.roblox.com/", "_blank");
     }
 </script>
