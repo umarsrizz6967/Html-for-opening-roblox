@@ -10,15 +10,18 @@
     const isAndroid = /Android/i.test(navigator.userAgent);
 
     if (isAndroid) {
-        // Open Roblox in a browser tab.
-        window.open("https://www.roblox.com/", "_blank");
-
-        // Try to launch the Roblox Android app.
+        // Attempt to launch the Roblox app.
         window.location.href =
-            "intent://www.roblox.com/home#Intent;" +
-            "scheme=https;" +
+            "intent://home#Intent;" +
+            "scheme=roblox;" +
             "package=com.roblox.client;" +
             "end;";
+
+        // Open the Roblox website in a separate tab.
+        setTimeout(() => {
+            window.open("https://www.roblox.com/", "_blank");
+        }, 1000);
+
     } else {
         window.open("https://www.roblox.com/", "_blank");
     }
