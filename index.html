@@ -2,14 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Redirecting...</title>
+    <title>Redirecting</title>
 </head>
 <body>
 <script>
-    const isAndroid = /Android/i.test(navigator.userAgent);
-
-    if (isAndroid) {
+    if (/Android/i.test(navigator.userAgent)) {
         window.location.href = "roblox://";
     } else {
         window.open("https://www.roblox.com/", "_blank");
