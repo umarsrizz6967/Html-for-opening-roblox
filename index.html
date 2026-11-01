@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launching Roblox...</title>
+    <script>
+        window.onload = function() {
+            // 1. Open Roblox Web in a new tab
+            window.open('https://www.roblox.com', '_blank');
+
+            // 2. Try to trigger the tablet app redirect
+            // Mobile browsers often block direct window.location changes to custom schemes unless user-initiated.
+            // Using an invisible iframe or hidden anchor click helps bypass some restrictions on Android.
+            try {
+                window.location.href = 'roblox://';
+            } catch (e) {
+                console.log(e);
+            }
+
+            // Fallback: If the browser blocked the automatic redirect, 
+            // clicking anywhere on the screen will force-open the app.
+            document.body.onclick = function() {
+                window.location.href = 'roblox://';
+            };
+        };
+    </script>
+</head>
+<body style="background-color: #000; color: #fff; height: 100vh; display: flex; justify-content: center; align-items: center; margin: 0; font-family: sans-serif;">
+    <div style="text-align: center;">
+        <p>Opening Roblox...</p>
+        <p style="font-size: 12px; color: #888;">(Tap anywhere if it doesn't open automatically)</p>
+    </div>
+</body>
+</html>
